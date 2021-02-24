@@ -1,0 +1,21 @@
+The select statement.
+SELECT * FROM <table name>;
+SELECT <column1>, <column2> FROM <table name>;
+For example, if you want to know the name and age of all registered students, you can query the database as--
+SELECT name, age FROM student;
+
+Grouping: ranking and top-n analysis. 
+SELECT name, age FROM student WHERE age BETWEEN 13 AND 19;
+SELECT count(student_id), dept FROM student GROUP BY dept;
+SELECT count(student_id), dept FROM student GROUP BY deptt ORDER BY count(student_id) DESC;
+
+String functions(upper and lower, replace, concat, substring, len, ltrim, rtrim).
+SELECT UPPER(first_name) FROM student;
+select first_name, REPLACE(phone_number, ‘-‘, ‘ ‘) as number from student;
+select CONCAT(first_name, ‘ ‘, last_name) as fullName from student;
+select substring(hall_ticket_no,7,11) as sequence_num from exam;
+select student_profile from student where len(student_profile) < 25;
+select ltrim(first_name) from student;
+select trim(first_name) from student;
+
+Date functions. 
